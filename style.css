@@ -1,0 +1,104 @@
+@charset 'UTF-8';
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+ul, ol, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+#slider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; 
+/*overflow: 컨텐츠 요소가 너무 커서 다 보여주기 힘들 때 어떻게 보여줄지 결정.
+hidden: 넘치는 부분은 잘려서 보이지 않는다.*/
+}
+#slider .panel {
+    width: calc(100% * 5);
+    height: 100%;
+    margin-left: 0%;
+}
+#slider .panel li {
+    width: calc(100% / 5);
+    /*calc(): 괄호 안의 식을 계산한 결과를 속성값으로 사용*/
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    float: left;
+}
+#slider .panel li:nth-of-type(1) {
+    background-image: url(img/pic1.jpg);
+}
+#slider .panel li:nth-of-type(2) {
+    background-image: url(img/pic2.jpg);
+}
+#slider .panel li:nth-of-type(3) {
+    background-image: url(img/pic3.jpg);
+}
+#slider .panel li:nth-of-type(4) {
+    background-image: url(img/pic4.jpg);
+}
+#slider .panel li:nth-of-type(5) {
+    background-image: url(img/pic5.jpg);
+}
+
+.btns {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    bottom: 10vh;
+    perspective: 800px;
+}
+.btns li {
+    float: left;
+    width: 20%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0px 20px;
+}
+.btns li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333;
+    font: 14px/40px "arial";
+    color: #333;
+    text-align: center;
+    border-radius: 20px;
+    transition: 1s;
+}
+.btns li.on a {
+    background: rgba(0,0,0, 0.5);
+    color: #fff;
+    transform: rotateY(360deg);
+    font-weight: bold;
+}
+#circle {
+    position: fixed;
+    top: 50%;
+    margin-top: -160px;
+    right: -160px;
+    transition: 1.5s;
+}
+#circle.rot1 {
+    transform: rotate(0deg);
+}
+#circle.rot2 {
+    transform: rotate(60deg);
+}
+#circle.rot3 {
+    transform: rotate(120deg);
+}
+#circle.rot4 {
+    transform: rotate(180deg);
+}
+#circle.rot5 {
+    transform: rotate(240deg);
+}
